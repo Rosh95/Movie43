@@ -1,0 +1,6 @@
+.app {
+  max-width: 1010px;
+  @media (min-width: 1010px) {
+    margin: 0 auto;
+  }
+}
