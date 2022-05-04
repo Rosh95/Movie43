@@ -6,12 +6,10 @@ import SearchPanel from '../search-panel';
 
 export default class App extends Component {
   state = {
-    // eslint-disable-next-line react/no-unused-state
     term: '',
   };
 
   onSearchChange = (term) => {
-    // eslint-disable-next-line react/no-unused-state
     this.setState({ term });
   };
 

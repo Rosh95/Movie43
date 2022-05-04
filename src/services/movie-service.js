@@ -23,13 +23,3 @@ export default class MovieService {
     return res;
   }
 }
-
-/* console.log('hello world');
-
-const swapi = new MovieService();
-swapi.getMovie('return').then((res) => {
-  res.forEach((p) => {
-    return console.log(p);
-  });
-});
- */
