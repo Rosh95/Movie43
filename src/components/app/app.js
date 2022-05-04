@@ -19,7 +19,7 @@ export default class App extends Component {
     const { term } = this.state;
 
     return (
-      <div>
+      <div className="app">
         <Header />
         <SearchPanel onSearchChange={this.onSearchChange} />
         <MovieList name={term} />

@@ -6,6 +6,7 @@ import NavigatorOnline from 'react-navigator-online';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LoadingOutlined } from '@ant-design/icons';
+import { debounce } from 'lodash';
 import MovieService from '../../services/movie-service';
 
 const pageSize = 5;
@@ -22,6 +23,11 @@ export default class MovieList extends Component {
     totalPage: 0,
     currentPage: 1,
   };
+
+  debounceTest = debounce((page) => {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.searchFilm(page);
+  }, 1000);
 
   componentDidMount() {
     this.searchFilm();
@@ -41,12 +47,12 @@ export default class MovieList extends Component {
     });
   };
 
-  onSearchPage = (page) => {
+  onSearchPage = debounce((page) => {
     this.setState({
       currentPage: page,
     });
-    this.searchFilm();
-  };
+    this.debounceTest(page);
+  }, 1000);
 
   searchFilm() {
     // eslint-disable-next-line react/destructuring-assignment
@@ -62,7 +68,6 @@ export default class MovieList extends Component {
           loading: false,
         });
       })
-
       .catch(this.onError);
   }
 
