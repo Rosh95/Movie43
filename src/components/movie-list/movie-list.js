@@ -155,8 +155,8 @@ function MoviesView({ movies }) {
                       <img
                         src={
                           movie.poster_path === null
-                            ? 'http://image.tmdb.org/t/p/w500//zsURBSQ6RnrTHm3v5L08wLiNHQj.jpg'
-                            : `http://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                            ? 'https://image.tmdb.org/t/p/w500//zsURBSQ6RnrTHm3v5L08wLiNHQj.jpg'
+                            : `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
                         }
                         className="card-img"
                         style={{ margin: '25px 0 25px 10px' }}
